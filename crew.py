@@ -24,6 +24,9 @@ tasks_config_path = './config/tasks.yaml'
 agents_config = load_config(agents_config_path)
 tasks_config = load_config(tasks_config_path)
 
+# Load tool
+internet_search_tool = InternetSearchTool.internet_search_tool
+
 # Define agents
 print(agents_config['research_analyst'])
 researcher_analyst = Agent(
@@ -31,7 +34,7 @@ researcher_analyst = Agent(
     verbose=True,
     llm= llm,
     memory= True,
-    tools=[InternetSearchTool.internet_search_tool],
+    tools=[internet_search_tool],
     allow_delegation=True
 )
 
@@ -40,7 +43,7 @@ writer = Agent(
     verbose=True,
     llm= llm,
     memory= True,
-    tools=[InternetSearchTool.internet_search_tool],
+    tools=[internet_search_tool],
     allow_delegation=False
 )
 
@@ -48,13 +51,13 @@ writer = Agent(
 # Define tasks
 research_task = Task(
     config=tasks_config['research_task'],
-    tools=[InternetSearchTool.internet_search_tool],
+    tools=[internet_search_tool],
     agent=researcher_analyst
 )
 
 writing_task = Task(
     config=tasks_config['research_task'],
-    tools=[InternetSearchTool.internet_search_tool],
+    tools=[internet_search_tool],
     agent=writer
 )
 
@@ -70,7 +73,7 @@ crew = Crew(
     manager_llm=llm
 )
 
-result = crew.kickoff(inputs={'topic': 'compare renewable energy'})
+result = crew.kickoff(inputs={'topic': 'renewable energy'})
 print(result)
 
 """
