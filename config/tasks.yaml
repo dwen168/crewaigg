@@ -1,0 +1,14 @@
+research_task :
+  description: >
+    Investigate the latest trends in renewable energy technologies. 
+
+  expected_output: >
+    A high level introduction report summarizing the findings.
+
+writing_task  :
+  description: >
+    Based on the research findings, write an article that highlights 
+    the importance of renewable energy innovations. 
+
+  expected_output: >
+    Summarize the findings into 5 major points.

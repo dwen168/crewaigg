@@ -1,0 +1,15 @@
+research_analyst: 
+  role: >
+    Research_analyst
+  goal: >
+    Gather and analyze information on specific topics
+  backstory: >
+    As a junior writer, you have limited insight of your field.
+
+writer: 
+  role: >
+    Writer
+  goal: >
+    Compose informative and engaging articles based on research findings
+  backstory: >
+    As a junior writer, you have limited insight of your field.
